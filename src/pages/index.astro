@@ -6,44 +6,48 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+<html lang="ko">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>💻 M0S_quito’s Dev Log</h1>
+      <p>
+        이곳은 내가 만든 실험용 블로그이자 개발 기록 공간이다.  
+        Termux, Raspberry Pi, Astro, Obsidian 같은 도구를 이용해  
+        “언제 어디서나 코딩 가능한 환경”을 직접 구축하며 생긴 과정을 정리한다.
+      </p>
+
+      <h2>🧩 다루는 주제</h2>
+      <ul>
+        <li>📂 Obsidian을 활용한 로컬 지식 관리와 퍼블리싱</li>
+        <li>🧠 LLM과 자동화 시스템 구축 실험</li>
+        <li>🔧 React, Node.js, Express 기반 개인 프로젝트</li>
+        <li>🔋 Termux와 Raspberry Pi 환경 세팅 및 최적화</li>
+        <li>📈 장기 투자, 시스템 사고, 그리고 일상적인 기록</li>
+      </ul>
+
+      <h2>🚀 방향성</h2>
+      <p>
+        이 블로그는 완성된 결과물을 보여주는 곳이라기보다,  
+        내가 배우고 시도한 과정을 쌓아두는 개인 로그에 가깝다.  
+        모든 글은 Obsidian에서 작성되고, Astro로 빌드되어 자동 배포된다.
+      </p>
+
+      <h2>📘 앞으로의 실험</h2>
+      <ul>
+        <li>Git 커밋 로그 기반 자동 요약 시스템</li>
+        <li>Markdown 기반 OS 프로젝트 <strong>M0S_MD</strong></li>
+        <li>AR 환경에서의 개발 워크플로 실험</li>
+      </ul>
+
+      <p>
+        기술은 결국 습관이 된다.  
+        이 블로그는 그 습관을 기록하는 공간이다.
+      </p>
+    </main>
+    <Footer />
+  </body>
 </html>
