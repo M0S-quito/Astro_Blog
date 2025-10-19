@@ -1,5 +1,6 @@
 # 🚀 M0S_quito Blog — Built with Astro  
 
+-> codespace에서 테스트 해봄!!
 > Personal development log & experimental publishing system.  
 > Built for portability, automation, and long-term record keeping.
 
