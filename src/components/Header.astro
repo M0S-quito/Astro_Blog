@@ -1,16 +1,16 @@
 ---
 import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
+import Topbar from './Topbar.astro';
 ---
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
+		<div class="left-controls">
+			<button class="toggle-topbar" aria-label="Open topbar" onclick="window.toggleTopbar && window.toggleTopbar()">▦</button>
+			<h2><a href="/">{SITE_TITLE}</a></h2>
 		</div>
+		<!-- internal links intentionally removed; Topbar provides navigation -->
 		<div class="social-links">
 			<!-- <a href="https://m.webtoo.ls/@astro" target="_blank">
 				<span class="sr-only">Follow Astro on Mastodon</span>
@@ -41,6 +41,7 @@ import HeaderLink from './HeaderLink.astro';
 			</a>
 		</div>
 	</nav>
+	<Topbar title={SITE_TITLE} />
 </header>
 <style>
 	header {
