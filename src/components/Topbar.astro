@@ -1,11 +1,13 @@
 ---
 const { title = '' } = Astro.props;
 ---
+
 <nav class="topbar hidden" id="topbar">
   <div class="topbar-left">
     <button class="tb-back" onclick="history.back()">←</button>
     <div class="tb-title">{title}</div>
   </div>
+
   <div class="topbar-right">
     <a href="/">Home</a>
     <a href="/blog">Blog</a>
@@ -15,33 +17,81 @@ const { title = '' } = Astro.props;
 </nav>
 
 <style>
-.topbar{
-  position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:0.6rem 1rem;background:rgba(255,255,255,0.92);backdrop-filter:blur(6px);border-bottom:1px solid rgba(0,0,0,0.08);z-index:1200;transition:transform .28s ease,opacity .28s ease}
-.topbar.hidden{transform:translateY(-110%);opacity:0;pointer-events:none}
-.topbar .tb-back{font-family:var(--font-mono);border:0;background:transparent;font-size:1.05rem;padding-right:0.6rem}
-.topbar .tb-title{font-weight:600}
-.topbar .topbar-right a{margin-left:0.8rem;text-decoration:none;color:inherit}
+/* ====== Topbar Layout ====== */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0.6rem 1rem;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+  z-index: 1200;
+  transition:
+    transform 0.28s ease,
+    opacity 0.28s ease;
+}
+
+/* ====== Visibility ====== */
+.topbar.hidden {
+  transform: translateY(-110%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ====== Left Section ====== */
+.tb-back {
+  font-family: var(--font-mono);
+  border: none;
+  background: transparent;
+  font-size: 1.05rem;
+  padding-right: 0.6rem;
+  cursor: pointer;
+}
+
+.tb-title {
+  font-weight: 600;
+}
+
+/* ====== Right Section ====== */
+.topbar-right a {
+  margin-left: 0.8rem;
+  text-decoration: none;
+  color: inherit;
+}
 </style>
 
 <script>
-window.toggleTopbar = function(){
-  const el = document.getElementById('topbar');
-  if(!el) return;
-  el.classList.toggle('hidden');
-}
+/* ====== Topbar Toggle ====== */
+window.toggleTopbar = function () {
+  const el = document.getElementById("topbar");
+  if (!el) return;
+  el.classList.toggle("hidden");
+};
 
-// Close topbar when clicking on the page (but not when clicking inside the topbar)
-if (typeof window !== 'undefined') {
-  document.addEventListener('click', (e) => {
-    const el = document.getElementById('topbar');
+/* ====== Auto-hide when clicking outside ====== */
+if (typeof window !== "undefined") {
+  document.addEventListener("click", (e) => {
+    const el = document.getElementById("topbar");
     if (!el) return;
-    // if topbar is hidden, nothing to do
-    if (el.classList.contains('hidden')) return;
-    // if click happened inside the topbar or on the toggle button, ignore
-    if (e.target.closest && e.target.closest('#topbar')) return;
-    if (e.target.closest && e.target.closest('.toggle-topbar')) return;
-    // otherwise hide
-    el.classList.add('hidden');
+
+    // Already hidden? Ignore
+    if (el.classList.contains("hidden")) return;
+
+    // Click inside topbar or toggle button? Ignore
+    if (e.target.closest("#topbar")) return;
+    if (e.target.closest(".toggle-topbar")) return;
+
+    // Otherwise, hide it
+    el.classList.add("hidden");
   });
 }
 </script>
+

@@ -1,16 +1,18 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
->
-	<main>
+<!doctype html>
+<html lang="ko">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
       <h1>💻 M0S_quito’s Dev Log</h1>
       <p>
         이곳은 내가 만든 실험용 블로그이자 개발 기록 공간이다.  
@@ -47,4 +49,5 @@ import Footer from '../components/Footer.astro';
       </p>
     </main>
     <Footer />
-</Layout>
+  </body>
+</html>
