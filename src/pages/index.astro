@@ -6,45 +6,95 @@ import Footer from '../components/Footer.astro';
 
 <Layout
 	title="Readme"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
+	description="Blog 사용 방법과 구조"
+	pubDate={new Date('October 29 2025')}
 	heroImage={AboutHeroImage}
 >
 	<main>
-      <h1>💻 M0S_quito’s Dev Log</h1>
-      <p>
-        이곳은 내가 만든 실험용 블로그이자 개발 기록 공간이다.  
-        Termux, Raspberry Pi, Astro, Obsidian 같은 도구를 이용해  
-        “언제 어디서나 코딩 가능한 환경”을 직접 구축하며 생긴 과정을 정리한다.
-      </p>
+		<h1>📖 M0Squito_Blog</h1>
+		<p>
+			이 문서는 이 블로그의 사용 방식과 제작 의도를 설명한다.  
+			복잡한 기능보다<br> <b>“읽기 자체에 집중할 수 있는 환경”</b>을 만드는 것이 목표다.
+		</p>
 
-      <h2>🧩 다루는 주제</h2>
-      <ul>
-        <li>📂 Obsidian을 활용한 로컬 지식 관리와 퍼블리싱</li>
-        <li>🧠 LLM과 자동화 시스템 구축 실험</li>
-        <li>🔧 React, Node.js, Express 기반 개인 프로젝트</li>
-        <li>🔋 Termux와 Raspberry Pi 환경 세팅 및 최적화</li>
-        <li>📈 장기 투자, 시스템 사고, 그리고 일상적인 기록</li>
-      </ul>
+		<hr />
 
-      <h2>🚀 방향성</h2>
-      <p>
-        이 블로그는 완성된 결과물을 보여주는 곳이라기보다,  
-        내가 배우고 시도한 과정을 쌓아두는 개인 로그에 가깝다.  
-        모든 글은 Obsidian에서 작성되고, Astro로 빌드되어 자동 배포된다.
-      </p>
+		<h2>1. 🧭 블로그 사용 방법</h2>
+		<div class="finder-window fade-in">
+			<div class="finder-header">
+				<div class="window-dots">
+					<div class="dot red"></div>
+					<div class="dot yellow"></div>
+					<div class="dot green"></div>
+				</div>
+				<span class="muted">/docs/usage</span>
+			</div>
 
-      <h2>📘 앞으로의 실험</h2>
-      <ul>
-        <li>Git 커밋 로그 기반 자동 요약 시스템</li>
-        <li>Markdown 기반 OS 프로젝트 <strong>M0S_MD</strong></li>
-        <li>AR 환경에서의 개발 워크플로 실험</li>
-      </ul>
+			<p>
+				이 블로그는 <code>Astro</code> 기반 정적 사이트로 제작되었다.  
+				모든 코드는 아래의 저장소에서 확인할 수 있다.
+			</p>
 
-      <p>
-        기술은 결국 습관이 된다.  
-        이 블로그는 그 습관을 기록하는 공간이다.
-      </p>
-    </main>
-    <Footer />
+			<p>
+				➡️ <a href="https://github.com/M0S-quito/Astro_Blog" target="_blank">
+				https://github.com/M0S-quito/Astro_Blog</a>
+			</p>
+
+			<h3>페이지 이동</h3>
+			<ul>
+				<li>상단의 <b>Topbar</b> 버튼으로 주요 페이지(<code>Home</code>, <code>Blog</code>, <code>About</code>, <code>Readme</code>)로 이동할 수 있다.</li>
+				<li>각 포스트는 독립된 정적 페이지로 구성되어 있으며, 목록에서 클릭 시 바로 본문으로 이동한다.</li>
+				<li>페이지 간 전환이나 스크롤 외의 복잡한 인터랙션은 의도적으로 제거되어 있다.</li>
+			</ul>
+
+			<h3>인터페이스 특징</h3>
+			<ul>
+				<li>모든 글은 <b>Topbar가 없는 단일 화면 구조</b>로 표시된다.</li>
+				<li>시선이 분산되지 않도록, 화면에는 <b>텍스트와 여백</b>만 존재한다.</li>
+				<li>세피아 톤 다크 테마는 장시간 읽기에도 피로를 최소화하도록 조정되어 있다.</li>
+			</ul>
+		</div>
+
+		<h2>2. 💭 제작 철학</h2>
+		<div class="finder-window fade-in">
+			<div class="finder-header">
+				<div class="window-dots">
+					<div class="dot red"></div>
+					<div class="dot yellow"></div>
+					<div class="dot green"></div>
+				</div>
+				<span class="muted">/docs/philosophy</span>
+			</div>
+
+			<p>
+				이 블로그는 화려한 기능을 보여주기 위한 곳이 아니다.  
+				글을 읽는 경험 자체를 중심에 두고 설계된 공간이다.
+			</p>
+
+			<p>
+				그래서 상단 메뉴, 애니메이션, 위젯 등  
+				집중을 방해하는 요소들을 모두 제거했다.  
+				모든 포스트는 동일한 배경, 동일한 폰트, 동일한 리듬으로  
+				조용히 읽히도록 만들어졌다.
+			</p>
+
+			<p>
+				세피아 다크 테마는 눈의 피로를 줄이기 위한 선택이다.  
+				밝은 화면의 강한 대비 대신,  
+				<b>조도 낮은 독서등 아래의 종이 질감</b> 같은 톤을 의도했다.
+			</p>
+
+			<p>
+				이 블로그는 결과물이 아니라 <b>읽는 행위를 위한 인터페이스</b>다.  
+				필요한 기능만 남기고, 나머지는 모두 지웠다.  
+				그 단순함 속에서 글이 온전히 드러나기를 바란다.
+			</p>
+		</div>
+
+		<hr />
+		<p class="muted" style="text-align:center; margin-top:2em;">
+			이 블로그는 완성된게 아닌 지속적으로 발전하는 프로젝트입니다.
+		</p>
+	</main>
+	<Footer />
 </Layout>
